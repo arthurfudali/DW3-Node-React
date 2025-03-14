@@ -12,4 +12,8 @@ gameRoutes.post("/games", gameController.createGame);
 // Endpoint para excluir um jogo
 gameRoutes.delete("/games/:id", gameController.deleteGame);
 
+gameRoutes.put("/games/:id", gameController.updateGame)
+
+gameRoutes.get("/games/:id", gameController.getOneGame)
+
 export default gameRoutes;
