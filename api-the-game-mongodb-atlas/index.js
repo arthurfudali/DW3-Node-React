@@ -1,8 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import Games from "./models/Games.js"
 const app = express();
-
+import Game from "./models/Games.js";
 // Importando as rotas (endpoints) de Games
 import gameRoutes from './routes/gameRoutes.js'
 

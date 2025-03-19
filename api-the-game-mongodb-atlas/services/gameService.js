@@ -10,9 +10,10 @@ class gameService {
     } catch (error) {
       console.log(error);
     }
-  }''
+  }
+
   // funcao para cadastrar jogos
-  async Create(title, year, price, descriptions) {
+  async Create(title, year, price, descriptions) { //informa os campos a serem criados
     try {
       const newGame = new Game({
         // title : title é a mesma coisa
@@ -27,6 +28,7 @@ class gameService {
       console.log(error);
     }
   }
+  // funcao para deletar registros
   async deleteGame(id) {
     try {
       await Game.findByIdAndDelete(id);
@@ -35,6 +37,7 @@ class gameService {
       console.log(error);
     }
   }
+  // funcao para atualizar um registro
   async Update(id, title, year, price, descriptions) {
     try {
       await Game.findByIdAndUpdate(id, {

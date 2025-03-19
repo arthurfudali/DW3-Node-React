@@ -27,6 +27,7 @@ const createGame = async (req, res) => {
 // funcao para deletar jogos
 const deleteGame = async (req, res) => {
   try {
+    // captura o ID pelo URL da pagina
     if (ObjectId.isValid(req.params.id)) {
       const id = req.params.id;
       gameService.deleteGame(id);
@@ -46,7 +47,7 @@ const updateGame = async (req, res) => {
       // Desestruturação
       //const title = req.body.title
       const { title, year, price, descriptions } = req.body;
-      gameService.Update (title, year, price, descriptions);
+      gameService.Update (id, title, year, price, descriptions);
       res.sendStatus(200); // Código 200 (OK): Requisição bem sucedida
     } else {
       res.sendStatus(400); // Código 400 (Bad Request): Requisição mal formada
