@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-const dbUser = "arthurfudali"
-const dbPassword = "eiyxUnJfIjCkTSRn"
+import dotenv from "dotenv";
+dotenv.config();
 const connect = () =>{
     mongoose.connect(
-        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.79onb.mongodb.net/api-the-games?retryWrites=true&w=majority&appName=Cluster0`
+        `mongodb+srv://arthurfudali:${process.env.DB_PASSWORD}@cluster0.79onb.mongodb.net/api-the-games?retryWrites=true&w=majority&appName=Cluster0&ssl`
     );
     const connection = mongoose.connection;
     connection.on("error", () => {
