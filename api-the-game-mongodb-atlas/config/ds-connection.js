@@ -1,9 +1,9 @@
-import mongoose, { connect } from "mongoose";
-const dbUser = ""
-const dbPassword = " "
-const connnect = () =>{
+import mongoose from "mongoose";
+const dbUser = "arthurfudali"
+const dbPassword = "eiyxUnJfIjCkTSRn"
+const connect = () =>{
     mongoose.connect(
-        `stingDeConexao`
+        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.79onb.mongodb.net/api-the-games?retryWrites=true&w=majority&appName=Cluster0`
     );
     const connection = mongoose.connection;
     connection.on("error", () => {

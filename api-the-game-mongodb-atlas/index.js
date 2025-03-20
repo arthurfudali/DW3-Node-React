@@ -1,5 +1,7 @@
 import express from "express";
-import mongoose from "mongoose";
+// Importando a conexão com o banco de dados
+import mongoose from "./config/ds-connection.js";
+
 const app = express();
 import Game from "./models/Games.js";
 // Importando as rotas (endpoints) de Games
@@ -11,7 +13,8 @@ app.use(express.json());
 app.use('/', gameRoutes)
 
 // Iniciando a conexão com o banco de dados do MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
+//essa conexao foi substituida pelo arquivo ds-connection.js
+// mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
 
 // ROTA PRINCIPAL
 app.get("/", (req, res) => {
