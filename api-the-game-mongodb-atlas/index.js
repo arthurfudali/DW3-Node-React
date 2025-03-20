@@ -11,7 +11,8 @@ app.use(express.json());
 app.use('/', gameRoutes)
 
 // Iniciando a conexão com o banco de dados do MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
+
+//mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
 
 // ROTA PRINCIPAL
 app.get("/", (req, res) => {

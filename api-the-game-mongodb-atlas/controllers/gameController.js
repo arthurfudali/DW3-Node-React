@@ -1,5 +1,6 @@
 import gameService from "../services/gameService.js";
 import { ObjectId } from "mongodb";
+import mongoose from "../config/ds-connection.js";
 
 const getAllGames = async (req, res) => {
   try {
