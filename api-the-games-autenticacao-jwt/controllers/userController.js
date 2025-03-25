@@ -1,5 +1,5 @@
 import userService from "../services/userService.js";
-import { jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 // JWTSecret
 const JWTSecret = "apithegamessecret";
@@ -44,13 +44,14 @@ const loginUser = async (req, res) => {
         } else {
           res.status(401).json({ error: "Senha incorreta" }); // 401 (UNAUTHORIZED)
         }
+      } else {
+        res.status(404).json({ error: "Usuário não encontrado" }); // 404 (NOT FOUND)
       }
     } else {
-      res.status(404).json({ error: "Usuário não encontrado" }); // 404 (NOT FOUND)
+      res.sendStatus(400).json({ error: "Email nao encontrado" }); // 400 (BAD REQUEST)
     }
   } catch (error) {
     console.log(error);
-    res.sendStatus(400).json({ error: "Email nao encontrado" }); // 400 (BAD REQUEST)
   }
 };
 export default { createUser, loginUser };
