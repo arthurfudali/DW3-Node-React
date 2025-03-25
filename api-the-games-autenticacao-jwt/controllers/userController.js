@@ -34,13 +34,15 @@ const loginUser = async (req, res) => {
             { expiresIn: "48h" },
             (error, token) => {
               if (error) {
-                res.status(400).json({error: "Erro ao gerar o token"}) // 400 (BAD REQUEST)
-              } 
+                res.status(400).json({ error: "Erro ao gerar o token" }); // 400 (BAD REQUEST)
+              } else {
+                res.status(200).json({ token: token }); // 200 (OK)
+              }
             }
           );
           res.status(200).json({ message: "Usuário autenticado" });
         } else {
-          res.status(401).json({ error: "Senha incorreta" });
+          res.status(401).json({ error: "Senha incorreta" }); // 401 (UNAUTHORIZED)
         }
       }
     }
