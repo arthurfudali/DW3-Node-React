@@ -45,10 +45,12 @@ const loginUser = async (req, res) => {
           res.status(401).json({ error: "Senha incorreta" }); // 401 (UNAUTHORIZED)
         }
       }
+    } else {
+      res.status(404).json({ error: "Usuário não encontrado" }); // 404 (NOT FOUND)
     }
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    res.sendStatus(400).json({ error: "Email nao encontrado" }); // 400 (BAD REQUEST)
   }
 };
-export default { createUser };
+export default { createUser, loginUser };
