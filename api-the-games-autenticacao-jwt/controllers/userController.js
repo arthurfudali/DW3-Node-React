@@ -40,7 +40,6 @@ const loginUser = async (req, res) => {
               }
             }
           );
-          res.status(200).json({ message: "Usuário autenticado" });
         } else {
           res.status(401).json({ error: "Senha incorreta" }); // 401 (UNAUTHORIZED)
         }
@@ -54,4 +53,4 @@ const loginUser = async (req, res) => {
     console.log(error);
   }
 };
-export default { createUser, loginUser };
+export default { createUser, loginUser, JWTSecret };
