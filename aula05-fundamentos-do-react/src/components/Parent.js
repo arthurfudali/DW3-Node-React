@@ -4,11 +4,9 @@ const Parent = () => {
   return (
     <>
       <div>
-        <p>
-          <strong>Esse é o componente pai</strong>
-        </p>
-        {/* chamando o componente filho */}
-        <Child/>
+        <p><strong>Este é o Componente Pai</strong></p>
+        {/* Chamando o componente filho */}
+        <Child />
       </div>
     </>
   );

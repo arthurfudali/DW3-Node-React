@@ -3,7 +3,7 @@ const Child = () => {
     <>
       <div>
         <p>
-          <em>Este é o componente filho</em>
+          <em>Este é o componente filho...</em>
         </p>
       </div>
     </>
