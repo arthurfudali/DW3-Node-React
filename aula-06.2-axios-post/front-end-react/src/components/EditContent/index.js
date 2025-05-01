@@ -67,6 +67,8 @@ const EditContent = ({ onClose, game }) => {
               className="inputPrimary"
               required
               value={title}
+              //fazaer isso pra todas
+              onChange={(e) => setTitle(e.target.value)}
             />
             <input
               type="text"
