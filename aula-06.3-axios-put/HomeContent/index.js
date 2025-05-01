@@ -106,9 +106,7 @@ const HomeContent = () => {
             ))}
           </div>
         </div>
-        {selectedGame && (
-          <EditContent game={selectedGame} onClose={closeEditModal} />
-        )}
+        {selectedGame && <EditContent onClose={closeEditModal} />}
       </div>
     </>
   );
